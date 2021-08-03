@@ -64,6 +64,9 @@
       const ps = document.createElement("audio");
       ps.src = "https://nssh.tk/sound/體育課.wav";
 
+      const change = document.createElement("audio");
+      change.src = "https://nssh.tk/sound/調課通知.wav"; 
+
 
       var count = 0;
 
@@ -78,6 +81,12 @@
         if(m>=0&&m<=5){
             count=0;
         }
+
+
+         if(count==0&&( (day==2&&h==15&&m==8) || (day==3&&h==9&&m==58) || (day==4&&h==9&&m==58)  )){
+            change.play(); //調課
+            count++;
+         }
 
 
         if(count==0&&( h==8&&m==19&&(day>=1&&day<=5) )){
